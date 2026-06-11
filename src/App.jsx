@@ -3,6 +3,8 @@ import iconDonasi from "./assets/icon-donasi.png";
 import iconLokasi from "./assets/icon-lokasi.png";
 import iconChat from "./assets/icon-chat.png";
 import donasi from "./assets/donasi.png";
+import pasfoto from "./assets/pasfoto.jpg";
+
 import Eksplorasi from "./pages/eksplorasi";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 // ── Tailwind config is injected via CDN in claude.ai; colors are inlined as styles ──
@@ -215,14 +217,14 @@ function HeroSection() {
               ⬇ Download APK
             </a>
             <button onClick={() => navigate("/Eksplorasi")}
-            
-            
-            style={{
-              background: "#fff", border: `2px solid ${colors.primary}33`,
-              color: colors.primary, padding: "14px 24px", borderRadius: 12,
-              fontFamily: "Montserrat", fontSize: 14, fontWeight: 600,
-              cursor: "pointer", transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
-            }}
+
+
+              style={{
+                background: "#fff", border: `2px solid ${colors.primary}33`,
+                color: colors.primary, padding: "14px 24px", borderRadius: 12,
+                fontFamily: "Montserrat", fontSize: 14, fontWeight: 600,
+                cursor: "pointer", transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
+              }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = colors.primary; e.currentTarget.style.background = `${colors.primary}0d`; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = `${colors.primary}33`; e.currentTarget.style.background = "#fff"; }}
             >
@@ -243,16 +245,16 @@ function HeroSection() {
             background: `${colors.primary}1a`, filter: "blur(48px)",
             borderRadius: "50%", transform: "scale(0.9)", zIndex: -1,
           }} />
-         <img
-  src={donasi}
-  alt="Baik.in Mockup"
-  style={{
-    width: "100%", maxWidth: 360, height: "auto",
-    objectFit: "contain", margin: "0 auto", display: "block",
-    filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.15))",
-    animation: "bob 6s ease-in-out infinite",
-  }}
-/>
+          <img
+            src={donasi}
+            alt="Baik.in Mockup"
+            style={{
+              width: "100%", maxWidth: 360, height: "auto",
+              objectFit: "contain", margin: "0 auto", display: "block",
+              filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.15))",
+              animation: "bob 6s ease-in-out infinite",
+            }}
+          />
         </div>
       </div>
 
@@ -397,10 +399,16 @@ function BioSection() {
           <span style={{ fontFamily: "Montserrat", fontSize: 12, fontWeight: 500, opacity: 0.8, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 4 }}>
             Professional Role
           </span>
-          <span style={{ fontFamily: "Montserrat", fontSize: 24, fontWeight: 700, lineHeight: 1.2 }}>
-            Lead Developer
-          </span>
-          <div style={{ marginTop: 16, width: 40, height: 4, background: "rgba(255,255,255,0.3)", borderRadius: 999 }} />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "8px" }}>
+            <span style={{ fontFamily: "Montserrat", fontSize: 24, fontWeight: 700, lineHeight: 1.2 }}>
+              Lead Developer
+            </span>
+            <img
+            src={pasfoto}
+              alt="Deskripsi Gambar"
+              style={{ width: "150px", height: "auto" }} // Sesuaikan ukurannya
+            />
+          </div>          <div style={{ marginTop: 16, width: 40, height: 4, background: "rgba(255,255,255,0.3)", borderRadius: 999 }} />
         </div>
       </div>
       <style>{`@media (max-width: 640px) { .bio-grid { grid-template-columns: 1fr !important; } }`}</style>
@@ -564,10 +572,10 @@ function CTASection() {
           atau mitra strategis yang ingin menciptakan dampak positif berkelanjutan bersama Baik.in.
         </p>
 
-        
-        
-        
-        
+
+
+
+
         {/* <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
   {[
     { label: "Hubungi Kami Sekarang ✉", href: "https://yourwebsite.com", style: { background: "#fff", color: colors.primary } },
