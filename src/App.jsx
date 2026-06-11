@@ -3,6 +3,8 @@ import iconDonasi from "./assets/icon-donasi.png";
 import iconLokasi from "./assets/icon-lokasi.png";
 import iconChat from "./assets/icon-chat.png";
 import donasi from "./assets/donasi.png";
+import Eksplorasi from "./pages/Eksplorasi";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 // ── Tailwind config is injected via CDN in claude.ai; colors are inlined as styles ──
 const colors = {
   primary: "#0052cc",
@@ -147,6 +149,7 @@ function Header() {
 }
 
 function HeroSection() {
+  const navigate = useNavigate();
   const [ref, visible] = useScrollReveal();
   const [ref2, visible2] = useScrollReveal();
   return (
@@ -211,7 +214,10 @@ function HeroSection() {
             >
               ⬇ Download APK
             </a>
-            <button style={{
+            <button onClick={() => navigate("/eksplorasi")}
+            
+            
+            style={{
               background: "#fff", border: `2px solid ${colors.primary}33`,
               color: colors.primary, padding: "14px 24px", borderRadius: 12,
               fontFamily: "Montserrat", fontSize: 14, fontWeight: 600,
@@ -677,8 +683,7 @@ function Footer() {
   );
 }
 
-// ── Root ──
-export default function BaikinApp() {
+function Home() {
   return (
     <div style={{ fontFamily: "Montserrat, sans-serif", overflowX: "hidden" }}>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -693,5 +698,33 @@ export default function BaikinApp() {
       </main>
       <Footer />
     </div>
+  );
+}
+// ── Root ──
+// export default function BaikinApp() {
+//   return (
+//     <div style={{ fontFamily: "Montserrat, sans-serif", overflowX: "hidden" }}>
+//       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+//       <Header />
+//       <main style={{ paddingTop: 80 }}>
+//         <HeroSection />
+//         <FeaturesSection />
+//         <BioSection />
+//         <ChallengeSection />
+//         <FutureFeaturesSection />
+//         <CTASection />
+//       </main>
+//       <Footer />
+//     </div>
+//   );
+// }
+export default function BaikinApp() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/eksplorasi" element={<Eksplorasi />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
