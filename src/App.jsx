@@ -3,7 +3,7 @@ import iconDonasi from "./assets/icon-donasi.png";
 import iconLokasi from "./assets/icon-lokasi.png";
 import iconChat from "./assets/icon-chat.png";
 import donasi from "./assets/donasi.png";
-import Eksplorasi from "./pages/Eksplorasi";
+import Eksplorasi from "./pages/eksplorasi";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 // ── Tailwind config is injected via CDN in claude.ai; colors are inlined as styles ──
 const colors = {
@@ -214,7 +214,7 @@ function HeroSection() {
             >
               ⬇ Download APK
             </a>
-            <button onClick={() => navigate("/eksplorasi")}
+            <button onClick={() => navigate("/Eksplorasi")}
             
             
             style={{
@@ -723,7 +723,7 @@ export default function BaikinApp() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/eksplorasi" element={<Eksplorasi />} />
+        <Route path="/Eksplorasi" element={<Eksplorasi />} />
       </Routes>
     </BrowserRouter>
   );
