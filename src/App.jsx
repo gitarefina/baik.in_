@@ -203,7 +203,7 @@ function HeroSection() {
             namun layak pakai ke panti asuhan dan komunitas yang membutuhkan.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", paddingTop: 24 }}>
-            <a href="/baikin.apk" style={{
+            <a href="/app-release.apk" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
               background: colors.primary, color: colors.onPrimary,
               padding: "14px 24px", borderRadius: 12, border: "none",
